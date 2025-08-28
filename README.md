@@ -106,11 +106,11 @@ network:
       addresses: [192.168.100.2/24]
 ```
 
-![VM1 Network Configuration](Pasted%20image%20(5).png)
+
 
 ### NAT Routing Configuration
 
-![NAT Configuration Process](Pasted%20image%20(6).png)
+![NAT Configuration Process]
 
 ```bash
 # Enable IP forwarding
@@ -128,7 +128,6 @@ sudo apt install iptables-persistent -y
 
 ### NFS Client Setup
 
-![NFS Client Configuration](Pasted%20image%20(7).png)
 
 ```bash
 # Install NFS client
@@ -150,7 +149,7 @@ sudo mount 192.168.100.3:/var/www/html /mnt/nfs/html
 
 ### Nginx Configuration
 
-![Nginx Configuration](Pasted%20image%20(8).png)
+
 
 ```bash
 # Install Nginx
@@ -163,6 +162,7 @@ Modified root directive:
 ```nginx
 root /mnt/nfs/html;
 ```
+![Nginx Configuration](Pasted%20image%20(6).png)
 ![VM1 Network Setup](Pasted%20image%20(3).png)
 
 
@@ -171,7 +171,7 @@ root /mnt/nfs/html;
 
 ### Network Setup
 
-![VM2 Network Configuration](Pasted%20image%20(9).png)
+![VM2 Network Configuration]
 
 ```bash
 # /etc/netplan/01-netcfg.yaml
@@ -261,6 +261,7 @@ sudo systemctl status nginx
 curl localhost
 ```
 
+
 ### Final Validation Steps
 1. Find VM1's external IP: `ip a show dev enp1s0`
 2. Access in browser: `http://192.168.122.214`
@@ -315,7 +316,7 @@ ip route show
 # Test DNS resolution
 nslookup google.com
 ```
-
+![alt text](image-8.png)
 ## Security Considerations
 
 - VM2 is isolated from external networks
